@@ -41,6 +41,7 @@ heal_us_mara.9999 = {
 		ai_chance = {
 			base = 1
 		}
+		remove_piety = 1000
 	}
 
 	option = {
@@ -67,7 +68,7 @@ heal_us_mara.0001 = {
 		}
 
 		# Auxillary variable used in calculate_mara_disposition. Might be 50 or
-        #  more for old immortal character with lots of children
+		#  more for old immortal character with lots of children
 		set_variable = {
 			name = mara_respect
 			value = piety_level
@@ -132,7 +133,7 @@ heal_us_mara.0002 = {
 		}
 		if = {
 			# cannot use employer.var:mara_healed_diseases inside limit --
-            #  error at game load. Use temporary variable mara_healed_diseases_now
+			#  error at game load. Use temporary variable mara_healed_diseases_now
 			limit = { var:mara_healed_diseases_now > var:mara_healed_diseases_old }
 			employer = {
 				change_variable = {

@@ -36,7 +36,11 @@ Player or NPC who
 
 may organize a special ceremony that costs 1000 piety. The ceremony is attended by all courtiers who are present at court and have a curable disease. During the ceremony, every curable disease has a chance to be healed. The chance depends on Mara's attitude towards liege and sick courtier and is at least 5% (20% for children). If liege has highest piety level and many children and love relations, the chance might be 50% or more, even if courtier is a sinner in eyes of Mara.
 
-Thus Mara's healing is more useful for old and established liege and courtier and less useful for young rules and sinners. But, if you are not buying claims or reforming religion, you have no use for your piety.
+To organize healing, activate decision "Pray to Mara to heal diseases". AI character may choose this, too, especially if they are compassionate and someone they care about is sick. You will see decision "Pray to Mara to heal diseases" once you meet first two conditions above.
+
+Before spending 1000 piety, you see an option "Ask Mara to heal THIS_MANY people". After the ceremony you will see report: how many diseases and people were cured. Courtier is considered to be cured if at least one of his diseases is gone.
+
+Mara's healing is more useful for old and established liege and courtier and less useful for young rules and sinners. But, if you are not buying claims or reforming religion, you have no use for your piety. Thus the healing ceremony might be useful for young rulers, too.
 
 ## Installation
 
@@ -45,6 +49,10 @@ Thus Mara's healing is more useful for old and established liege and courtier an
 2. Activate via launcher called `dowser.exe`.
 
 For more details, see [wiki](https://ck3.paradoxwikis.com/Modding#Installing_mods_manually).
+
+## Load order
+
+"Elder Kings", then "Heal us, Mara".
 
 ## Bugs
 

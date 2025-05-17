@@ -4,20 +4,18 @@
 	}
 
 	is_shown = {
-		piety_level >= 3
-		# Can't pray to Mara while at war
-		is_at_war = no
+		is_landed = yes
 		faith = { patron_dv_mara_valid = yes }
 	}
 
 	is_valid = {
+		piety_level >= 3
+		piety >= 1000
+		# Can't pray to Mara while at war
+		is_at_war = no
 		location = capital_province
 		NOT = { exists = involved_activity }
 		need_to_heal_diseases_now = yes
-	}
-
-	cost = {
-		piety = 1000
 	}
 
 	cooldown = {
