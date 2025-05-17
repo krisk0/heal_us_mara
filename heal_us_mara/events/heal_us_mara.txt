@@ -1,0 +1,216 @@
+﻿namespace = heal_us_mara
+
+heal_us_mara.9999 = {
+	title = heal_us_mara.9999.t
+	desc = heal_us_mara.9999.t
+	type = character_event
+	theme = medicine
+
+	# calculate count of sick courtiers
+	immediate = {
+		set_variable = {
+			name = mara_diseased_people_to_heal
+			value = 0
+		}
+		every_courtier = {
+			limit = {
+				is_at_same_location = root
+				has_curable_disease = yes
+			}
+			prev = {
+				change_variable = {
+					name = mara_diseased_people_to_heal
+					add = 1
+				}
+			}
+		}
+		if = {
+			limit = { has_curable_disease = yes }
+			change_variable = {
+				name = mara_diseased_people_to_heal
+				add = 1
+			}
+		}
+		save_scope_as = owner
+	}
+	# variable mara_diseased_people_to_heal is destroyed in heal_us_mara.0004
+
+	option = {
+		name = heal_us_mara.9999.a
+		trigger_event = heal_us_mara.0001
+		ai_chance = {
+			base = 1
+		}
+	}
+
+	option = {
+		name = heal_us_mara.9999.b
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+heal_us_mara.0001 = {
+	hidden = yes
+
+	immediate = {
+
+		set_variable = {
+			name = mara_healed_people
+			value = 0
+		}
+
+		set_variable = {
+			name = mara_healed_diseases
+			value = 0
+		}
+
+		# Auxillary variable used in calculate_mara_disposition. Might be 50 or
+        #  more for old immortal character with lots of children
+		set_variable = {
+			name = mara_respect
+			value = piety_level
+		}
+		change_variable = {
+			name = mara_respect
+			subtract = 3
+			multiply = 10
+			add = alive_child_count
+		}
+
+		# choose sick courtiers
+		every_courtier = {
+			limit = {
+				is_at_same_location = root
+				has_curable_disease = yes
+			}
+			trigger_event = heal_us_mara.0002
+		}
+
+		# TODO: create half-price decision to cure just one not the whole court
+
+		# choose self if sick
+		if = {
+			limit = { has_curable_disease = yes }
+			trigger_event = heal_us_mara.0003
+		}
+
+		# display statistic
+		trigger_event = heal_us_mara.0004
+	}
+}
+
+heal_us_mara.0002 = {
+	hidden = yes
+
+	immediate = {
+		set_variable = {
+			name = success_chance
+			value = calculate_mara_disposition
+		}
+		set_variable = {
+			name = mara_healed_diseases_old
+			value = employer.var:mara_healed_diseases
+		}
+		set_variable = {
+			name = mara_healed_diseases_now
+			value = var:mara_healed_diseases_old
+		}
+		every_character_trait = {
+			limit = { has_trait_flag = curable_disease }
+			random = {
+				chance = prev.var:success_chance
+				prev = {
+					change_variable = {
+						name = mara_healed_diseases_now
+						add = 1
+					}
+					recover_from_disease_effect = { DISEASE = prev }
+				}
+			}
+		}
+		if = {
+			# cannot use employer.var:mara_healed_diseases inside limit --
+            #  error at game load. Use temporary variable mara_healed_diseases_now
+			limit = { var:mara_healed_diseases_now > var:mara_healed_diseases_old }
+			employer = {
+				change_variable = {
+					name = mara_healed_people
+					add = 1
+				}
+			}
+		}
+		employer = {
+			set_variable = {
+				name = mara_healed_diseases
+				value = root.var:mara_healed_diseases_now
+			}
+		}
+		remove_variable = mara_healed_diseases_now
+		remove_variable = mara_healed_diseases_old
+		remove_variable = success_chance
+	}
+}
+
+heal_us_mara.0003 = {
+	hidden = yes
+	immediate = {
+		set_variable = {
+			name = success_chance
+			value = calculate_mara_disposition_to_liege
+		}
+		set_variable = {
+			name = mara_healed_diseases_old
+			value = var:mara_healed_diseases
+		}
+		every_character_trait = {
+			limit = {
+				has_trait_flag = curable_disease
+			}
+			random = {
+				chance = prev.var:success_chance
+				prev = {
+					change_variable = {
+						name = mara_healed_diseases
+						add = 1
+					}
+					recover_from_disease_effect = { DISEASE = prev }
+				}
+			}
+		}
+		if = {
+			limit = { var:mara_healed_diseases > var:mara_healed_diseases_old }
+			change_variable = {
+				name = mara_healed_people
+				add = 1
+			}
+		}
+		remove_variable = mara_healed_diseases_old
+		remove_variable = success_chance
+	}
+}
+
+heal_us_mara.0004 = {
+	type = character_event
+	theme = medicine
+	title = heal_us_mara.0004.t
+	desc = heal_us_mara.0004.t
+	override_background = {
+		reference = temple_generic
+	}
+
+	immediate = {
+		save_scope_as = owner
+	}
+
+	option = {
+		name = heal_us_mara.0004.d
+	}
+	after = {
+		remove_variable ?= mara_respect
+		remove_variable ?= mara_healed_people
+		remove_variable ?= mara_healed_diseases
+		remove_variable ?= mara_diseased_people_to_heal
+	}
+}

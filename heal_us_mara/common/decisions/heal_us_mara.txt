@@ -1,0 +1,41 @@
+﻿heal_us_mara_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	}
+
+	is_shown = {
+		piety_level >= 3
+		# Can't pray to Mara while at war
+		is_at_war = no
+		faith = { patron_dv_mara_valid = yes }
+	}
+
+	is_valid = {
+		location = capital_province
+		NOT = { exists = involved_activity }
+		need_to_heal_diseases_now = yes
+	}
+
+	cost = {
+		piety = 1000
+	}
+
+	cooldown = {
+		days = heal_us_mara_cooldown
+	}
+
+	effect = {
+		trigger_event = heal_us_mara.9999
+	}
+
+	ai_check_interval = 1
+	ai_potential = {
+		is_landed = yes
+	}
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = heal_us_mara_chance
+		}
+	}
+}

@@ -1,0 +1,13 @@
+﻿l_english:
+
+ heal_us_mara_decision:0 "Pray to Mara to heal diseases"
+ heal_us_mara_decision_confirm:0 "Yes, time to heal"
+ heal_us_mara_decision_desc:0 "Go to temple and pray"
+ heal_us_mara_decision_tooltip:0 ""
+
+ heal_us_mara.9999.t:0 "$heal_us_mara_decision$?"
+ heal_us_mara.9999.a:0 "Ask Mara to heal [owner.MakeScope.Var('mara_diseased_people_to_heal').GetValue] people"
+ heal_us_mara.9999.b:0 "Do not bother Mara for now"
+
+ heal_us_mara.0004.t:0 "Mara heal results"
+ heal_us_mara.0004.d:0 "Mara's opinion of you was [owner.MakeScope.Var('mara_respect').GetValue], diseases healed [owner.MakeScope.Var('mara_healed_diseases').GetValue], people healed [owner.MakeScope.Var('mara_healed_people').GetValue] out of [owner.MakeScope.Var('mara_diseased_people_to_heal').GetValue]"

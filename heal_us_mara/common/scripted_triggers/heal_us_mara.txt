@@ -1,0 +1,14 @@
+﻿need_to_heal_diseases_now = {
+	any_courtier = {
+		has_curable_disease = yes
+		is_at_same_location = root
+	}
+}
+
+has_std = {
+	OR = {
+		has_trait = lovers_pox
+		has_trait = early_great_pox
+		has_trait = great_pox
+	}
+}
