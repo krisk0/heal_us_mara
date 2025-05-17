@@ -38,6 +38,14 @@ may organize a special ceremony that costs 1000 piety. The ceremony is attended 
 
 Thus Mara's healing is more useful for old and established liege and courtier and less useful for young rules and sinners. But, if you are not buying claims or reforming religion, you have no use for your piety.
 
+## Installation
+
+1. Put all files except `readme.md` into `mods` directory, where you put `elder-kings-ck3.mod` file and `elder-kings-ck3` directory.
+
+2. Activate via launcher called `dowser.exe`.
+
+For more details, see [wiki](https://ck3.paradoxwikis.com/Modding#Installing_mods_manually).
+
 ## Bugs
 
 Send bugreports and suggestions via github. If you found the mod elsewhere, you better visit primary page [on github](https://github.com/krisk0/heal_us_mara/).
