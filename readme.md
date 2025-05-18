@@ -2,7 +2,7 @@
 
 Modification for Crusader Kings 3.
 
-Allows landed owner to pray to goddess Mara for healing. During a special ceremony, that costs 1000 piety, Mara attempts to heal all diseases on all who is present. With a non-zero probability, every curable disease might be healed immediately.
+Allows a landed owner to pray to goddess Mara for healing. During a special ceremony, that costs 1000 piety, Mara attempts to heal all diseases on all who is present. With a non-zero probability, every curable disease might be healed immediately.
 
 ## Technical requirements
 
@@ -22,7 +22,7 @@ There are many gods in Nirn. However their influence is minimal. For instance, M
 
 ## Healing ceremony
 
-Player or NPC who
+A player or NPC who
 
 * owns land,
 
