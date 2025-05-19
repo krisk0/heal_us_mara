@@ -7,7 +7,6 @@ Allows a landed owner to pray to goddess Mara for healing. During a special cere
 ## Technical requirements
 
 * Crusader Kings version Crown 1.15.0.2.
-
 * Elder Kings modification version 0.15.1.
 
 ## Languages supported
@@ -22,16 +21,12 @@ There are many gods in Nirn. However their influence is minimal. For instance, M
 
 ## Healing ceremony
 
-A player or NPC who
+A player or NPC
 
-* owns land,
-
+* who owns land,
 * whose pantheon includes Mara,
-
 * is not at war or at special activity,
-
 * is physically present in his residence,
-
 * has reached piety level 3 (Devoted Servant) or above,
 
 may organize a special ceremony that costs 1000 piety. The ceremony is attended by all courtiers who are present at court and have a curable disease. During the ceremony, every curable disease has a chance to be healed. The chance depends on Mara's attitude towards liege and sick courtier and is at least 5% (20% for children). If liege has highest piety level and many children and love relations, the chance might be 50% or more, even if courtier is a sinner in eyes of Mara.
@@ -45,7 +40,6 @@ Mara's healing is more useful for old and established liege and courtier and les
 ## Installation
 
 1. Put all files except `readme.md` into `mods` directory, where you put `elder-kings-ck3.mod` file and `elder-kings-ck3` directory.
-
 2. Activate via launcher called `dowser.exe`.
 
 For more details, see [wiki](https://ck3.paradoxwikis.com/Modding#Installing_mods_manually).
@@ -61,11 +55,11 @@ Send bugreports and suggestions via github. If you found the mod elsewhere, you 
 ## Q&A
 
 1. Can you port this mod to a newer version of the game? — Absolutely, as soon as Elder Kings for that version is released.
-
 2. Can you add support for another language? — No, I am terribly busy, I am taking Imperial Island.
-
 3. Can you change this mod so it does not require Elder Kings? — No, unless you hire me (but I am very greedy, so you better hire someone else).
 
-## Useful links
+## List of my CK3 modifications
 
-1. [List of bugs in Elder Kings 0.15.1 found by me ](https://gist.github.com/krisk0/2c265f40f3c009425ad4e1dcf3ae5b64).
+1. [Heal us, Mara](https://github.com/krisk0/heal_us_mara)
+2. [Focus and guardian](https://github.com/krisk0/focus_and_guardian)
+3. [Elder Kings fixes and tweaks](https://github.com/krisk0/ek_fixes_and_tweaks)
