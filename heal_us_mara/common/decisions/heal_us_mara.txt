@@ -5,7 +5,6 @@
 
 	is_shown = {
 		is_landed = yes
-		faith = { patron_dv_mara_valid = yes }
 	}
 
 	is_valid = {
@@ -13,6 +12,7 @@
 		piety >= 1000
 		# Can't pray to Mara while at war
 		is_at_war = no
+		faith = { patron_dv_mara_valid = yes }
 		location = capital_province
 		NOT = { exists = involved_activity }
 		need_to_heal_diseases_now = yes
@@ -28,7 +28,7 @@
 
 	ai_check_interval = 1
 	ai_potential = {
-		is_landed = yes
+		always = yes
 	}
 	ai_will_do = {
 		base = 0

@@ -2,53 +2,53 @@
 heal_us_mara_chance = {
 	if = {
 		limit = {
-            # close family, courtier, at home, I like him -> 50
+			# close family, courtier, at home, I like him -> 50
 			any_close_family_member = {
 				is_at_same_location = root
-                is_courtier_of = root
+				is_courtier_of = root
 				root = { opinion = { target = prev value >= 50 } }
 				has_curable_disease = yes
 			}
 		}
 		add = 50
 	}
-    else_if = {
-        limit = {
-            # soulmate, courtier, at home -> 50
-            any_relation = {
-                type = soulmate
-                is_courtier_of = root
-                is_at_same_location = root
-                has_curable_disease = yes
-            }
-        }
-        add = 50
-    }
-    else_if = {
-        limit = {
-            # lover, courtier, at home -> 40
-            any_relation = {
-                type = lover
-                is_courtier_of = root
-                is_at_same_location = root
-                has_curable_disease = yes
-            }
-        }
-        add = 40
-    }
 	else_if = {
 		limit = {
-            # extended family, courtier, at home, I like him -> 30
+			# soulmate, courtier, at home -> 50
+			any_relation = {
+				type = soulmate
+				is_courtier_of = root
+				is_at_same_location = root
+				has_curable_disease = yes
+			}
+		}
+		add = 50
+	}
+	else_if = {
+		limit = {
+			# lover, courtier, at home -> 40
+			any_relation = {
+				type = lover
+				is_courtier_of = root
+				is_at_same_location = root
+				has_curable_disease = yes
+			}
+		}
+		add = 40
+	}
+	else_if = {
+		limit = {
+			# extended family, courtier, at home, I like him -> 30
 			any_close_or_extended_family_member = {
 				is_at_same_location = root
-                is_courtier_of = root
+				is_courtier_of = root
 				root = { opinion = { target = prev value >= 40 } }
 				has_curable_disease = yes
 			}
 		}
 		add = 30
 	}
-    # TODO: friends?
+	# TODO: friends?
 
 	# Personality modifiers
 	if = {
@@ -61,18 +61,18 @@ heal_us_mara_chance = {
 	}
 
 	# sadistic character with no sick lovers or spouses might still heal
-    #  courtiers, just because
-    min = 5
-    # example: compassionate, with sick grandfather: 60 percent
-    #          sadistic with sick lover: 10 percent
-    #          sadistic w/o sick lover: 5 percent
+	#  courtiers, just because
+	min = 5
+	# example: compassionate, with sick grandfather: 60 percent
+	#          sadistic with sick lover: 10 percent
+	#          sadistic w/o sick lover: 5 percent
 }
 
 calculate_mara_disposition_to_liege = {
 	# Piety contribution (20 for level 4, 40 for level 5)
 	add = {
 		value = piety_level
-        subtract = 3
+		subtract = 3
 		multiply = 20
 	}
 
@@ -98,22 +98,22 @@ calculate_mara_disposition_to_liege = {
 	every_child = {
 		add = 5
 	}
-    
-    # Mara loves children
-    if = {
-        limit = {
-            is_adult = no
-        }
-        min = 20
-    }
+
+	# Mara loves children
+	if = {
+		limit = {
+			is_adult = no
+		}
+		min = 20
+	}
 }
 
 calculate_mara_disposition = {
 	value = calculate_mara_disposition_to_liege
 	min = 5
-    # if Mara dislikes courtier, but respects liege, then she might heal anyway,
-    #  with a small probability. For liege with highest piety level and 31
-    #  children, probability = 10 * (5 - 3) + 31 = 51
+	# if Mara dislikes courtier, but respects liege, then she might heal anyway,
+	#  with a small probability. For liege with highest piety level and 31
+	#  children, probability = 10 * (5 - 3) + 31 = 51
 	min = employer.var:mara_respect
 }
 
