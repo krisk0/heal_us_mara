@@ -35,7 +35,11 @@ To organize healing, activate decision "Pray to Mara to heal diseases". AI chara
 
 Before spending 1000 piety, you see an option "Ask Mara to heal THIS_MANY people". After the ceremony you will see report: how many diseases and people were cured. Courtier is considered to be cured if at least one of his diseases is gone.
 
-Mara's healing is more useful for old and established liege and courtier and less useful for young rules and sinners. But, if you are not buying claims or reforming religion, you have no use for your piety. Thus the healing ceremony might be useful for young rulers, too.
+Mara's healing is more useful for old and established liege and courtier and less useful for young rules and sinners. But, if you are not buying claims or reforming religion, you probably have no use for your piety. Thus the healing ceremony might be useful for young rulers, too.
+
+## Bonus effect
+
+If someone rejected-from-marriage-bed healed their sexually-transmitted-disease, they lose the rejected-from-marriage-bed status. This happens silently and automatically regardless of treatment method.
 
 ## Installation
 
@@ -56,10 +60,12 @@ Send bugreports and suggestions via github. If you found the mod elsewhere, you 
 
 1. Can you port this mod to a newer version of the game? — Absolutely, as soon as Elder Kings for that version is released.
 2. Can you add support for another language? — No, I am terribly busy, I am taking Imperial Island.
-3. Can you change this mod so it does not require Elder Kings? — No, unless you hire me (but I am very greedy, so you better hire someone else).
+3. Can you change this mod so it does not require Elder Kings? — No, I live in this universe. Hire someone in that universe or make modifications yourself.
 
 ## List of my CK3 modifications
 
 1. [Heal us, Mara](https://github.com/krisk0/heal_us_mara)
 2. [Focus and guardian](https://github.com/krisk0/focus_and_guardian)
 3. [Elder Kings fixes and tweaks](https://github.com/krisk0/ek_fixes_and_tweaks)
+4. [Disable achievements](https://github.com/krisk0/disable_achievements)
+5. [Scarab blood icon](https://github.com/krisk0/scarab_icon)
