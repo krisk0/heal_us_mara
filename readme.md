@@ -31,7 +31,7 @@ A player or NPC
 
 may organize a special ceremony that costs 1000 piety. The ceremony is attended by all courtiers who are present at court and have a curable disease. During the ceremony, every curable disease has a chance to be healed. The chance depends on Mara's attitude towards liege and sick courtier and is at least 5% (20% for children). If liege has highest piety level and many children and love relations, the chance might be 50% or more, even if courtier is a sinner in eyes of Mara.
 
-To organize healing, activate decision "Pray to Mara to heal diseases". AI character may choose this, too, especially if they are compassionate and someone they care about is sick. You will see decision "Pray to Mara to heal diseases" once you if you oen land.
+To organize healing, activate decision "Pray to Mara to heal diseases". AI character may choose this, too, especially if they are compassionate and someone they care about is sick. You will see decision "Pray to Mara to heal diseases" once you own land.
 
 Before spending 1000 piety, you see an option "Ask Mara to heal THIS_MANY people". After the ceremony you will see report: how many diseases and people were cured. Courtier is considered to be cured if at least one of his diseases is gone.
 
