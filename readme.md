@@ -68,4 +68,4 @@ Send bugreports and suggestions via github. If you found the mod elsewhere, you 
 2. [Focus and guardian](https://github.com/krisk0/focus_and_guardian)
 3. [Elder Kings fixes and tweaks](https://github.com/krisk0/ek_fixes_and_tweaks)
 4. [Disable achievements](https://github.com/krisk0/disable_achievements)
-5. [Scarab blood icon](https://github.com/krisk0/scarab_icon)
+5. [Scarab blood icon](https://github.com/krisk0/scarab_blood_icon)
