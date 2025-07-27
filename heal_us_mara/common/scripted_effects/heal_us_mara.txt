@@ -1,4 +1,4 @@
-﻿# Heal us, Mara change: remove rejected_from_marriage_bed_modifier if healed
+﻿# Heal us, Mara change: remove rejected_from_marriage_bed_modifier if STD healed
 
 #Removes the disease in question and sends notifications to everyone who should know. Needs the arguments DISEASE (trait name, only exception is early_great_pox - it should be removed as great_pox). Does NOT send an event to the character who gets the disease.
 recover_from_disease_effect = {
@@ -184,7 +184,7 @@ recover_from_disease_effect = {
 		#TRAIT REMOVAL
 		remove_trait = $DISEASE$
 
-		#IMMUNITY
+		#IMMUNITY, maybe clean rejected_from_marriage_bed_modifier
 		hidden_effect = {
 			maybe_remove_rejected_by_spouse = yes
 			if = {
@@ -203,12 +203,12 @@ recover_from_disease_effect = {
 	}
 }
 
-# if no longer have STD, remove rejected_from_marriage_bed_modifier
+# if no longer have STD, lose rejected_from_marriage_bed_modifier
 maybe_remove_rejected_by_spouse = {
 	if = {
 		limit = {
 			has_character_modifier = rejected_from_marriage_bed_modifier
-			has_std = no
+			has_std_trigger = no
 		}
 		remove_character_modifier = rejected_from_marriage_bed_modifier
 	}

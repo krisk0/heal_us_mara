@@ -112,8 +112,9 @@ calculate_mara_disposition = {
 	value = calculate_mara_disposition_to_liege
 	min = 5
 	# if Mara dislikes courtier, but respects liege, then she might heal anyway,
-	#  with a small probability. For liege with highest piety level and 31
-	#  children, probability = 10 * (5 - 3) + 31 = 51
+	#  with a small probability (or not so small if liege is pious and
+	#  industrious). For liege with highest piety level and 31 children,
+	#  probability = 10 * (5 - 3) + 31 = 51
 	min = employer.var:mara_respect
 }
 

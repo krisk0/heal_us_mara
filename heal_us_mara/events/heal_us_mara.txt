@@ -78,6 +78,11 @@ heal_us_mara.0001 = {
 			subtract = 3
 			multiply = 10
 			add = alive_child_count
+			# max = 100             — does not work here, using clamp_variable
+		}
+		clamp_variable = {
+			name = mara_respect
+			max = 100
 		}
 
 		# choose sick courtiers
@@ -88,8 +93,6 @@ heal_us_mara.0001 = {
 			}
 			trigger_event = heal_us_mara.0002
 		}
-
-		# TODO: create half-price decision to cure just one not the whole court
 
 		# choose self if sick
 		if = {
@@ -121,7 +124,12 @@ heal_us_mara.0002 = {
 		every_character_trait = {
 			limit = { has_trait_flag = curable_disease }
 			random = {
-				chance = prev.var:success_chance
+				# 'chance = prev.var:success_chance' presumably does not work. See
+				#  for instance ep3_laamps.0021:
+				#   chance = 0
+				#   modifier = { add = ep3_laamp_chance_score_value }
+				chance = 0
+				modifier = { add = prev.var:success_chance }
 				prev = {
 					change_variable = {
 						name = mara_healed_diseases_now
@@ -132,7 +140,7 @@ heal_us_mara.0002 = {
 			}
 		}
 		if = {
-			# cannot use employer.var:mara_healed_diseases inside limit --
+			# cannot use employer.var:mara_healed_diseases inside limit —
 			#  error at game load. Use temporary variable mara_healed_diseases_now
 			limit = { var:mara_healed_diseases_now > var:mara_healed_diseases_old }
 			employer = {
@@ -170,7 +178,10 @@ heal_us_mara.0003 = {
 				has_trait_flag = curable_disease
 			}
 			random = {
-				chance = prev.var:success_chance
+				# 'chance = prev.var:success_chance' presumably does not work, see
+				#  comment in heal_us_mara.0002 above
+				chance = 0
+				modifier = { add = prev.var:success_chance }
 				prev = {
 					change_variable = {
 						name = mara_healed_diseases
@@ -199,10 +210,6 @@ heal_us_mara.0004 = {
 	desc = heal_us_mara.0004.t
 	override_background = {
 		reference = temple_generic
-	}
-
-	immediate = {
-		save_scope_as = owner
 	}
 
 	option = {

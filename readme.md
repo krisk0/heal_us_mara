@@ -43,7 +43,7 @@ If someone rejected-from-marriage-bed healed their sexually-transmitted-disease,
 
 ## Installation
 
-1. Put all files except `readme.md` into `mods` directory, where you put `elder-kings-ck3.mod` file and `elder-kings-ck3` directory.
+1. Put all files except `readme.md` into `mod` directory, where you put `elder-kings-ck3.mod` file and `elder-kings-ck3` directory.
 2. Activate via launcher called `dowser.exe`.
 
 For more details, see [wiki](https://ck3.paradoxwikis.com/Modding#Installing_mods_manually).
@@ -62,10 +62,13 @@ Send bugreports and suggestions via github. If you found the mod elsewhere, you 
 2. Can you add support for another language? — No, I am terribly busy, I am taking Imperial Island.
 3. Can you change this mod so it does not require Elder Kings? — No, I live in this universe. Hire someone in that universe or make modifications yourself.
 
-## List of my CK3 modifications
+## Version history
 
-1. [Heal us, Mara](https://github.com/krisk0/heal_us_mara)
-2. [Focus and guardian](https://github.com/krisk0/focus_and_guardian)
-3. [Elder Kings fixes and tweaks](https://github.com/krisk0/ek_fixes_and_tweaks)
-4. [Disable achievements](https://github.com/krisk0/disable_achievements)
-5. [Scarab blood icon](https://github.com/krisk0/scarab_blood_icon)
+### 1.1
+
+* Fixed bug in decision trigger that prevented liege from healing oneself when no courtier is sick.
+* Minor cleanup and optimization.
+
+## My load order
+
+List of my modifications for CK3, and my load order is [here](https://gist.github.com/krisk0/3c51136a877afd606c184a575400922f).
